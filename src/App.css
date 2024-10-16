@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+:root {
+    --font-roboto: "Roboto Slab", serif;
+    --font-raleway: "Raleway", sans-serif;
+  
+    /* Domyślne kolory dla jasnego motywu */
+    --background-color: #f0f0f0;
+    --text-color: #212121;
+    --search-bg-color: #ffffff;
+    --search-text-color: #333333;
+    --movie-bg-color: #ffffff;
+    --movie-text-color: #333333;
+    --accent-color: #2196f3;
+    --gradient-color: rgba(33, 150, 243, 1);
+    --gradient-transparent: rgba(33, 150, 243, 0);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .dark-theme {
+    /* Kolory dla ciemnego motywu */
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --search-bg-color: #333333;
+    --search-text-color: #f0f0f0;
+    --movie-bg-color: #1e1e1e;
+    --movie-text-color: #f0f0f0;
+    --accent-color: #bb86fc; /* Fioletowy akcent */
+    --gradient-color: rgba(187, 134, 252, 1); /* Gradient dla ciemnego motywu */
+    --gradient-transparent: rgba(187, 134, 252, 0);
   }
-  to {
-    transform: rotate(360deg);
+  
+  body {
+    font-family: var(--font-roboto);
+    background-color: var(--background-color);
+    color: var(--text-color);
   }
-}
+  
+  .app {
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 0.9px;
+    background: linear-gradient(
+      90deg,
+      var(--gradient-color) 0%,
+      var(--gradient-transparent) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+  }
+  
+  .search {
+    width: 71%;
+    margin: 4rem 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1.75rem;
+    border-radius: 3rem;
+    background-color: var(--search-bg-color);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2), -5px -5px 7px rgba(255, 255, 255, 0.2);
+  }
+  
+  .search input {
+    flex: 1;
+    border: none;
+    font-size: 1.5rem;
+    font-family: var(--font-raleway);
+    font-weight: 500;
+    padding-right: 1rem;
+    outline: none;
+    color: var(--search-text-color);
+    background-color: var(--search-bg-color);
+  }
+  
+  .search img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+  
+  .empty h2 {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    font-family: var(--font-raleway);
+  }
+  
+  .container {
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .movie {
+    width: 310px;
+    height: 460px;
+    margin: 1.5rem;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie div:nth-of-type(3) {
+    background-color: var(--movie-bg-color);
+    padding: 16px 24px 24px 24px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  
+  .movie div:nth-of-type(3) span {
+    font-family: var(--font-raleway);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--movie-text-color);
+  }
+  
+  .movie div:nth-of-type(3) h3 {
+    margin-top: 5px;
+    font-family: var(--font-roboto);
+    color: var(--accent-color);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .app {
+      padding: 4rem 2rem;
+    }
+  
+    .search {
+      padding: 1rem 1.75rem;
+      width: 100%;
+    }
+  
+    .search input {
+      font-size: 1rem;
+    }
+  
+    .search img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
