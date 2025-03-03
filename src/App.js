@@ -8,13 +8,27 @@ import sunIcon from './sun-svgrepo-com.svg'
 
 const API_URL = "http://www.omdbapi.com?apikey=YOUR_API_KEY";
 
+/**
+ * Main App component that renders the movie search UI.
+ * It includes a theme toggle feature, movie search functionality, and displays movie results.
+ *
+ * @returns {JSX.Element} The App component
+ */
 function App() {
+  /** @type {string} Current theme of the app ('light' or 'dark') */
   const [theme, setTheme] = useState('light');
 
+  /**
+   * Toggles between 'light' and 'dark' themes.
+   */
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
+  /**
+   * Applies or removes the 'dark-theme' class to the document body
+   * based on the current theme.
+   */
   useEffect(() => {
     if (theme === 'dark') {
       document.body.classList.add('dark-theme');
@@ -23,10 +37,17 @@ function App() {
     }
   }, [theme]);
 
+  /** @type {Array<Object>} List of movies fetched from the API */
   const [movies, setMovies] = useState([]);
 
+  /** @type {string} The search term entered by the user */
   const [searchTerm, setSearchTerm] = useState("");
 
+  /**
+   * Fetches a list of movies based on the search term.
+   *
+   * @param {string} title The movie title to search for
+   */
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
@@ -56,7 +77,7 @@ function App() {
           ? (
             <div className="container">
               {movies.map((movie) => (
-                <MovieCard movie = {movie} />
+                <MovieCard movie={movie} key={movie.imdbID} />
               ))}
             </div>
           ) : (
