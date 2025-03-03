@@ -1,13 +1,21 @@
-Film Finder - React Web App
-This is a private web app built using React.js that allows users to search for films and retrieve detailed information about them using the OMDB API.
+# Film Finder - React Web App
 
-Features
-Film Search: Search for movies, series, or episodes by title.
-Movie Details: View information such as title, release year, rating, plot, and actors.
-Responsive Design: Works on both desktop and mobile devices.
-Error Handling: Displays an error message if no results are found or if there's an issue with the API.
-Tech Stack
-Frontend: React.js
-API: OMDB API
-State Management: React useState, useEffect hooks
-Styling: CSS
+**Film Finder** is a private web app built with React.js that lets users search for films and retrieve detailed information using the OMDB API.
+
+---
+
+## Features
+
+- **Film Search**: Easily search for movies, series, or episodes by title.
+- **Movie Details**: View detailed movie information, including title, release year, rating, plot, and actors.
+- **Responsive Design**: Optimized for both desktop and mobile devices, ensuring a seamless experience on any screen size.
+- **Error Handling**: Clear error messages are displayed if no results are found or if there’s an issue with the API.
+
+---
+
+## Tech Stack
+
+- **Frontend**: React.js
+- **API**: OMDB API
+- **State Management**: React `useState`, `useEffect` hooks
+- **Styling**: CSS
