@@ -17,5 +17,4 @@
 
 - **Frontend**: React.js
 - **API**: OMDB API
-- **State Management**: React `useState`, `useEffect` hooks
 - **Styling**: CSS
